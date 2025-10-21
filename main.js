@@ -76,11 +76,11 @@ let atual = 0;
 let perguntaAtual;
 let historiaFinal = " ";
 
-function mostraPergunta(){
-   if(atual>= perguntas.length){
-    mostraResultado();
-    return;
-   }
+function mostraPergunta() {
+    if (atual >= perguntas.length) {
+        mostraResultado();
+        return;
+    }
 
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
@@ -88,7 +88,7 @@ function mostraPergunta(){
     mostraAlternativas();
 }
 
-function mostraAlternativas(){
+function mostraAlternativas() {
     for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
@@ -98,14 +98,14 @@ function mostraAlternativas(){
 }
 
 
-function respostaSelecionada(opcaoSelecionada){
+function respostaSelecionada(opcaoSelecionada) {
     const afirmacoes = opcaoSelecionada.afirmacao;
     historiaFinal += afirmacoes + " ";
     atual++;
     mostraPergunta();
 }
 
-function mostraResultado(){
+function mostraResultado() {
     caixaPerguntas.textContent = "Se fosse possível...";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = " ";
