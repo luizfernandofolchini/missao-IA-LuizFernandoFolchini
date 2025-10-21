@@ -4,10 +4,6 @@ const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
 
-
-
-
-
 const perguntas = [
     {
         enunciado: "Ao ser convidado para uma festa, qual é a reação comum?",
@@ -78,21 +74,19 @@ const perguntas = [
 
 let atual = 0;
 let perguntaAtual;
+let historiaFinal = " ";
 
-function mostraPergunta() {
+function mostraPergunta(){
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     mostraAlternativas();
 }
 
-function mostraAlternativas() {
+function mostraAlternativas(){
     for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener('click', function () {
-            atual++;
-            mostraPergunta();
-        })
+        botaoAlternativas.addEventListener('click', () => respostaSelecionada(alternativa));
         caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
