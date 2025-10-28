@@ -106,7 +106,7 @@ function respostaSelecionada(opcaoSelecionada) {
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Observando sua essência...";
+    caixaPerguntas.textContent = "Se eu te defino...";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = " ";
 }
