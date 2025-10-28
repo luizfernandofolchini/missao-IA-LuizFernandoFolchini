@@ -97,16 +97,15 @@ function mostraAlternativas() {
     }
 }
 
-
 function respostaSelecionada(opcaoSelecionada) {
-    afirmacoes = opcaoSelecionada.afirmacao;
+    const afirmacoes = opcaoSelecionada.afirmacao;
     historiaFinal += afirmacoes + " ";
     atual++;
     mostraPergunta();
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Ao te descrever...";
+    caixaPerguntas.textContent = "Se fosse possível...";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = " ";
 }
